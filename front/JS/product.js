@@ -6,9 +6,6 @@ const colorOption = document.getElementById("colors");
 const btnAddToCart = document.getElementById("addToCart");
 
 let productsInfo = [];
-let titleProduct = "";
-let priceProduct = "";
-let descriptionProd = "";
 let colorProd = [];
 let quantityValue = 0;
 let colorSelected = "";
@@ -38,19 +35,20 @@ const imgProduct = async () => {
 
 //revoi le nom et le prix du produit
 const contentProducts = async () => {
-  titleProduct += productsInfo.map((product) => (product = product.name));
-  document.getElementById("title").textContent = titleProduct;
+  document.getElementById("title").textContent = productsInfo.map(
+    (product) => (product = product.name)
+  );
 
-  priceProduct += productsInfo.map((product) => (product = product.price));
-  document.getElementById("price").textContent = priceProduct;
+  document.getElementById("price").textContent = productsInfo.map(
+    (product) => (product = product.price)
+  );
 };
 
 //renvoi la description du produit
 const descriptionProduct = async () => {
-  descriptionProd += productsInfo.map(
+  document.getElementById("description").textContent = productsInfo.map(
     (product) => (product = product.description)
   );
-  document.getElementById("description").textContent = descriptionProd;
 };
 
 //creer les options(couleurs) du prduits
